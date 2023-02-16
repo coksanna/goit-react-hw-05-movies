@@ -1,16 +1,17 @@
-export const App = () => {
+import { BrowserRouter } from 'react-router-dom';
+
+import Navbar from './Navbar/Navbar';
+import UserRoutes from './UserRoutes';
+
+// import './App.css';
+
+function App() {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <UserRoutes />
+    </BrowserRouter>
   );
-};
+}
+
+export default App;
