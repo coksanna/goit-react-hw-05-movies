@@ -1,7 +1,7 @@
-import Movies from '../../components/Movies/Movies';
+import TrendMovies from '../../components/TrendMovies/TrendMovies';
 
 const HomePage = () => {
-  return <Movies />;
+  return <TrendMovies />;
 };
 
 export default HomePage;

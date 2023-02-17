@@ -21,7 +21,7 @@ const MoviesList = ({ items }) => {
 
   return (
     <>
-      <ul className={styles.list}>{elements}</ul>;
+      <ul className={styles.list}>{elements}</ul>
     </>
   );
 };
