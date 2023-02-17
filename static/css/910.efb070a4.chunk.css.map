@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/910.efb070a4.chunk.css","mappings":"AAAA,iCACE,SACF","sources":["components/MovieSearch/movieSearch.module.css"],"sourcesContent":[".errorMessage {\n  color: red;\n}\n"],"names":[],"sourceRoot":""}
