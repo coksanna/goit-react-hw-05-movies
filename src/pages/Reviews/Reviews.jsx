@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getReviews } from '../../servises/movies-api';
 
-const SingleMoviePageReviews = () => {
+const Reviews = () => {
   const { id } = useParams();
   const [reviews, setReviews] = useState([]);
 
@@ -18,20 +18,18 @@ const SingleMoviePageReviews = () => {
     fetchReviews();
   }, [id]);
 
-  return (
-    <>
-      <ul>
-        {reviews.map(review => {
-          return (
-            <li key={review.id}>
-              <p>Author: {review.author}</p>
-              <p>{review.content}</p>
-            </li>
-          );
-        })}
-      </ul>
-    </>
-  );
+  if (reviews.length) {
+    const elements = reviews.map(({ author, content, id }) => (
+      <li key={id}>
+        <p>Author: {author}</p>
+        <p>{content}</p>
+      </li>
+    ));
+
+    return <ul>{elements}</ul>;
+  } else {
+    return <h3>We don't have any reviews for this movie.</h3>;
+  }
 };
 
-export default SingleMoviePageReviews;
+export default Reviews;

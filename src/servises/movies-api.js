@@ -15,7 +15,6 @@ export const searchMovie = async (query, page = 1) => {
       query,
     },
   });
-  console.log('movie', data.results);
   return data.results;
 };
 
@@ -24,10 +23,10 @@ export const getTrendMovies = async (page = 1) => {
   return data;
 };
 
-export const fetchGenres = async () => {
-  const { data } = await instance.get(`/genre/movie/list`);
-  return data.genres;
-};
+// export const fetchGenres = async () => {
+//   const { data } = await instance.get(`/genre/movie/list`);
+//   return data.genres;
+// };
 
 export const fetchMovieById = async id => {
   const { data } = await instance.get(`/movie/${id}`);
@@ -43,13 +42,3 @@ export const getReviews = async id => {
   const { data } = await instance.get(`/movie/${id}/reviews`);
   return data.results;
 };
-
-// export const getPostById = async id => {
-//   const { data } = await instance.get(`/${id}`);
-//   return data;
-// };
-
-// export const getCommentByPostId = async id => {
-//   const { data } = await instance.get(`/${id}/comments`);
-//   return data;
-// };

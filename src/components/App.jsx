@@ -1,18 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './Navbar/Navbar';
-
 import { lazy, Suspense } from 'react';
+
+import Navbar from './Navbar/Navbar';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const SingleMoviePage = lazy(() =>
   import('../pages/SingleMoviePage/SingleMoviePage')
 );
-const SingleMoviePageCast = lazy(() =>
-  import('../pages/SingleMoviePageCast/SingleMoviePageCast')
-);
-const SingleMoviePageReviews = lazy(() =>
-  import('../pages/SingleMoviePageReview/SingleMoviePageReview')
-);
+const Cast = lazy(() => import('../pages/Cast/Cast'));
+const Reviews = lazy(() => import('../pages/Reviews/Reviews'));
 const MovieSearchPage = lazy(() =>
   import('../pages/MovieSearchPage/MovieSearchPage')
 );
@@ -26,8 +22,8 @@ export const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/movie-search" element={<MovieSearchPage />} />
           <Route path="/movie/:id" element={<SingleMoviePage />}>
-            <Route path="cast" element={<SingleMoviePageCast />} />
-            <Route path="reviews" element={<SingleMoviePageReviews />} />
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
           </Route>
           <Route path="*" element={<HomePage />} />
         </Routes>

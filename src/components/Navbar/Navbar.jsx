@@ -4,10 +4,6 @@ import styles from './navbar.module.css';
 
 import items from './items';
 
-// const getFullName = ({ isActive }) => {
-//   return isActive ? `${styles.link} ${styles.active}` : styles.link;
-// };
-
 const Navbar = () => {
   const elements = items.map(({ id, text, link }) => (
     <li key={id}>
@@ -17,7 +13,12 @@ const Navbar = () => {
     </li>
   ));
 
-  return <ul className={styles.menu}>{elements}</ul>;
+  return (
+    <>
+      <ul className={styles.menu}>{elements}</ul>
+      <hr />
+    </>
+  );
 };
 
 export default Navbar;
