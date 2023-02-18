@@ -27,7 +27,6 @@ const MoviesSearch = () => {
       try {
         setLoading(true);
         const data = await searchMovie(search, page);
-        console.log(data);
         setItems(prevItems => [...prevItems, ...data]);
       } catch (error) {
         setError(error.message);
